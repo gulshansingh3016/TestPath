@@ -5,9 +5,9 @@ import Directives._
 import org.scalatest.matchers.should.Matchers
 import org.scalatest.wordspec.AnyWordSpec
 
-class FullTestKitExampleSpec extends AnyWordSpec with Matchers with ScalatestRouteTest {
+class PathTest extends AnyWordSpec with Matchers with ScalatestRouteTest {
 
-  val smallRoute =
+  val smallRoute: Route =
     get {
       concat(
         pathSingleSlash {
@@ -27,6 +27,7 @@ class FullTestKitExampleSpec extends AnyWordSpec with Matchers with ScalatestRou
       // tests:
       Get() ~> smallRoute ~> check {
         responseAs[String] shouldEqual "Captain on the bridge!"
+
       }
     }
 
